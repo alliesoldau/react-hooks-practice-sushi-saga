@@ -39,6 +39,7 @@ function App() {
         addMoreSushi={addMoreSushi}
         stackAPlate={handlePlateStack}
         spendMoney={spendMoney}
+        cash={cash}
       />
       <Table
         plates={plates}
