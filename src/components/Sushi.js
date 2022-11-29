@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-function Sushi({ sushi, stackAPlate }) {
+function Sushi({ sushi, stackAPlate, spendMoney }) {
 
   const [monchmonch, setMonchMonch] = useState(false)
 
   function handleClick() {
     setMonchMonch(true);
-    stackAPlate()
+    stackAPlate();
+    spendMoney(sushi.price);
   }
 
   return (

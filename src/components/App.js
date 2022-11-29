@@ -12,10 +12,13 @@ function App() {
     .then((data) => setSushiData(data))
   }, [])
 
+  const initialBudget = 100
+
   const [sushiData, setSushiData] = useState([])
   const [startIndex, setStartIndex] = useState(0)
   const sushiSlice = sushiData.slice(startIndex, startIndex + 4)
   const [plates, setPlates] = useState([])
+  const [cash, setCash] = useState(initialBudget)
   
   function addMoreSushi() {
     setStartIndex(startIndex + 4)
@@ -25,7 +28,9 @@ function App() {
     setPlates([...plates, 1])
   }
 
-  console.log(plates)
+  function spendMoney(price) {
+    setCash(cash - price)
+  }
 
   return (
     <div className="app">
@@ -33,9 +38,11 @@ function App() {
         sushiSlice={sushiSlice}
         addMoreSushi={addMoreSushi}
         stackAPlate={handlePlateStack}
+        spendMoney={spendMoney}
       />
       <Table
         plates={plates}
+        cash={cash}
       />
     </div>
   );

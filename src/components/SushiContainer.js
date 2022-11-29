@@ -2,7 +2,7 @@ import React from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi";
 
-function SushiContainer({ sushiSlice, addMoreSushi, stackAPlate }) {
+function SushiContainer({ sushiSlice, addMoreSushi, stackAPlate, spendMoney }) {
 
   const sushiData = sushiSlice.map((sushi) => {
     return(
@@ -10,6 +10,7 @@ function SushiContainer({ sushiSlice, addMoreSushi, stackAPlate }) {
         key={sushi.id}
         sushi={sushi}
         stackAPlate={stackAPlate}
+        spendMoney={spendMoney}
       />
     )
   })
