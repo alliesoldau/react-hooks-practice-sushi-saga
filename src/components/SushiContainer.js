@@ -13,8 +13,6 @@ function SushiContainer({ sushiSlice, addMoreSushi }) {
     )
   })
 
-
-
   return (
     <div className="belt">
       {sushiData}
