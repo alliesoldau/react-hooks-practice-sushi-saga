@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SushiContainer from "./SushiContainer";
 import Table from "./Table";
+import MoneyForm from "./MoneyForm";
 
 const API = "http://localhost:3001/sushis";
 
@@ -32,6 +33,10 @@ function App() {
     setCash(cash - price)
   }
 
+  function increaseCash(newCash) {
+    setCash(cash + newCash)
+  }
+
   return (
     <div className="app">
       <SushiContainer
@@ -45,6 +50,10 @@ function App() {
         plates={plates}
         cash={cash}
       />
+       <MoneyForm 
+        cash={cash}
+        increaseCash={increaseCash}
+       />
     </div>
   );
 }
