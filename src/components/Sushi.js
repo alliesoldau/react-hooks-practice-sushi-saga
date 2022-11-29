@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-function Sushi({ sushi }) {
+function Sushi({ sushi, stackAPlate }) {
 
   const [monchmonch, setMonchMonch] = useState(false)
 
   function handleClick() {
     setMonchMonch(true);
+    stackAPlate()
   }
 
   return (

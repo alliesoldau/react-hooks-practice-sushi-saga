@@ -13,22 +13,30 @@ function App() {
   }, [])
 
   const [sushiData, setSushiData] = useState([])
-
-  // Start counting the first 4 sushi, then update as we click on
   const [startIndex, setStartIndex] = useState(0)
   const sushiSlice = sushiData.slice(startIndex, startIndex + 4)
+  const [plates, setPlates] = useState([])
   
   function addMoreSushi() {
     setStartIndex(startIndex + 4)
   }
 
+  function handlePlateStack() {
+    setPlates([...plates, 1])
+  }
+
+  console.log(plates)
+
   return (
     <div className="app">
       <SushiContainer
         sushiSlice={sushiSlice}
-        addMoreSushi={addMoreSushi}s
+        addMoreSushi={addMoreSushi}
+        stackAPlate={handlePlateStack}
       />
-      <Table />
+      <Table
+        plates={plates}
+      />
     </div>
   );
 }
